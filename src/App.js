@@ -3,24 +3,44 @@ import './App.css';
 import { Component, useState } from 'react';
 
 function App() {
-  const [state, updateAge] = useState({ age: 10 });
+  const [state, setState] = useState({ age: 1 });
 
   const handleClick = () => {
-    updateAge({ age: state.age + 1 });
+    let newAge = state.age - 10;
+    setState({ age: newAge });
   };
 
-  const handleMouseOver = () => {
-    console.log('mouse over');
-  };
   return (
     <div>
       <h1>Age is {state.age}</h1>
-      <button onClick={handleClick} onMouseOver={handleMouseOver}>
-        Click me!!!
-      </button>
+      <button onClick={handleClick}>Click me!!!</button>
     </div>
   );
 }
+
+// function App() {
+//   return <Form />;
+// }
+
+// function App() {
+//   const [state, updateAge] = useState({ age: 10 });
+
+//   const handleClick = () => {
+//     updateAge({ age: state.age + 1 });
+//   };
+
+//   const handleMouseOver = () => {
+//     console.log('mouse over');
+//   };
+//   return (
+//     <div>
+//       <h1>Age is {state.age}</h1>
+//       <button onClick={handleClick} onMouseOver={handleMouseOver}>
+//         Click me!!!
+//       </button>
+//     </div>
+//   );
+// }
 
 // class App extends Component {
 //   constructor(props) {
